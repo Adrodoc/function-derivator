@@ -1,0 +1,25 @@
+apply plugin: 'eclipse'
+apply plugin: 'java'
+apply plugin: 'groovy'
+
+version = '2015.09.05.18.47'
+archivesBaseName = 'funktions-optimierer'
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '3.5'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testCompile 'junit:junit:+'
+	testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+}
+
+jar {
+	manifest {
+		attributes 'Main-Class': 'de.adrodoc55.math.gui.FunktionsFrame'
+	}
+}
